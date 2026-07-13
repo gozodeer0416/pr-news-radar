@@ -1,0 +1,49 @@
+name: Weekly PR News Monitor
+
+on:
+  schedule:
+    - cron: "0 1 * * 1"   # 每週一 09:00 台北時間 (01:00 UTC)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests pyyaml anthropic
+
+      - name: Fetch news
+        run: python scripts/fetch.py
+
+      - name: Classify with Claude
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/classify.py
+
+      - name: Build dashboard data
+        run: python scripts/build.py
+
+      - name: Commit results
+        run: |
+          git config user.name "pr-news-radar bot"
+          git config user.email "actions@github.com"
+          git add docs/data
+          if git diff --cached --quiet; then
+            echo "no changes to commit"
+          else
+            git commit -m "chore: weekly monitor $(date -u +%F)"
+            git push
+          fi

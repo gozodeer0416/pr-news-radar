@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Ragic AI／No-code 媒體曝光研究｜最近半年</title>
+  <style>
+    :root {
+      --ink: #18231f;
+      --muted: #5e6d66;
+      --paper: #fbfcf8;
+      --surface: #ffffff;
+      --line: #dce5df;
+      --green: #146b4a;
+      --green-2: #e5f3eb;
+      --lime: #b8d64b;
+      --amber: #8a5a00;
+      --amber-bg: #fff4d6;
+      --blue: #275f8d;
+      --blue-bg: #e9f3fb;
+      --shadow: 0 14px 40px rgba(24, 35, 31, .08);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 92% 5%, rgba(184, 214, 75, .17), transparent 24rem),
+        linear-gradient(180deg, #f5f8f3 0, var(--paper) 28rem);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.72;
+    }
+
+    a {
+      color: var(--green);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover { color: #0b4c34; }
+
+    .shell {
+      display: grid;
+      grid-template-columns: 245px minmax(0, 920px);
+      gap: 42px;
+      width: min(1240px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 42px 0 80px;
+    }
+
+    aside {
+      position: sticky;
+      top: 24px;
+      align-self: start;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .86);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    aside h2 {
+      margin: 0 0 14px;
+      font-size: 16px;
+    }
+
+    nav a {
+      display: block;
+      padding: 7px 10px;
+      border-radius: 9px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--green);
+      background: var(--green-2);
+    }
+
+    .aside-note {
+      margin: 18px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    main { min-width: 0; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 48px;
+      border: 1px solid rgba(20, 107, 74, .18);
+      border-radius: 28px;
+      color: #f6fff9;
+      background: linear-gradient(135deg, #0d5037, #167453 68%, #31835f);
+      box-shadow: 0 24px 60px rgba(13, 80, 55, .20);
+    }
+
+    .hero::after {
+      position: absolute;
+      right: -78px;
+      bottom: -95px;
+      width: 280px;
+      height: 280px;
+      border: 48px solid rgba(184, 214, 75, .16);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .hero .eyebrow { color: #d9ee88; }
+
+    h1 {
+      position: relative;
+      z-index: 1;
+      max-width: 710px;
+      margin: 0;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+
+    .hero p {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 22px 0 0;
+      color: rgba(246, 255, 249, .84);
+      font-size: 17px;
+    }
+
+    .meta {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 26px;
+    }
+
+    .meta span {
+      padding: 6px 11px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 999px;
+      color: #effff4;
+      background: rgba(255, 255, 255, .09);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    section {
+      scroll-margin-top: 28px;
+      margin-top: 54px;
+    }
+
+    section > h2 {
+      margin: 0 0 10px;
+      font-size: 29px;
+      line-height: 1.22;
+      letter-spacing: -.02em;
+    }
+
+    .lead {
+      max-width: 780px;
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 24px;
+    }
+
+    .stat {
+      min-height: 144px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .stat strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--green);
+      font-size: 33px;
+      line-height: 1;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .callout {
+      margin-top: 24px;
+      padding: 24px 26px;
+      border: 1px solid #c9ded1;
+      border-left: 5px solid var(--green);
+      border-radius: 14px;
+      background: var(--green-2);
+    }
+
+    .callout p { margin: 0; }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0 0;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .badge-a { color: #0c583c; background: #dcefe5; }
+    .badge-b { color: var(--blue); background: var(--blue-bg); }
+    .badge-u { color: var(--amber); background: var(--amber-bg); }
+    .badge-zero { color: #6d7370; background: #edf0ee; }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 18px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: #315043;
+      background: #f0f6f2;
+      font-size: 12px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: #fbfdfb; }
+
+    .outlet {
+      min-width: 115px;
+      font-weight: 820;
+      font-size: 15px;
+    }
+
+    .case {
+      margin: 0 0 12px;
+    }
+
+    .case:last-child { margin-bottom: 0; }
+
+    .case a { font-weight: 760; }
+
+    .small {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .insights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .insight {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .insight .num {
+      display: inline-grid;
+      width: 30px;
+      height: 30px;
+      margin-bottom: 13px;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--green);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .insight h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .insight p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .priority {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .priority article {
+      padding: 21px 23px;
+      border-radius: 16px;
+      background: #f2f6f3;
+    }
+
+    .priority h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+
+    .priority p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .pitch-table td:first-child {
+      width: 44%;
+      font-size: 15px;
+      font-weight: 760;
+    }
+
+    .pitch-table td:nth-child(2) { width: 18%; }
+
+    .rank {
+      display: inline-block;
+      margin-right: 7px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .footnotes {
+      padding: 24px 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--muted);
+      background: #f6f8f6;
+      font-size: 13px;
+    }
+
+    .footnotes ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 980px) {
+      .shell {
+        display: block;
+        width: min(920px, calc(100% - 28px));
+        padding-top: 18px;
+      }
+      aside { display: none; }
+      .hero { padding: 36px 30px; }
+    }
+
+    @media (max-width: 680px) {
+      body { font-size: 15px; }
+      .summary-grid, .insights, .priority { grid-template-columns: 1fr; }
+      section { margin-top: 42px; }
+      section > h2 { font-size: 25px; }
+      th, td { padding: 14px; }
+      .hero { border-radius: 20px; }
+    }
+
+    @media print {
+      @page { margin: 14mm; }
+      body { background: #fff; font-size: 11pt; }
+      .shell { display: block; width: 100%; padding: 0; }
+      aside { display: none; }
+      .hero { padding: 30px; box-shadow: none; print-color-adjust: exact; }
+      section { break-inside: auto; margin-top: 32px; }
+      .stat, .table-wrap, .insight, .callout { box-shadow: none; }
+      tr, .stat, .insight, .priority article { break-inside: avoid; }
+      a { color: inherit; text-decoration: none; }
+      .table-wrap { overflow: visible; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside aria-label="報告目錄">
+      <p class="eyebrow">Report index</p>
+      <h2>Ragic PR 媒體研究</h2>
+      <nav>
+        <a href="#summary">研究結論</a>
+        <a href="#method">比較基準</a>
+        <a href="#tier1">Tier 1</a>
+        <a href="#tier2">Tier 2</a>
+        <a href="#tier3">Tier 3</a>
+        <a href="#insights">PR 規律</a>
+        <a href="#priority">媒體優先順序</a>
+        <a href="#pitches">Ragic 題目建議</a>
+        <a href="#notes">研究註記</a>
+      </nav>
+      <p class="aside-note">研究期間：2026/01/13–2026/07/13<br>製作日期：2026/07/13<br>所有文章標題均可點擊開啟來源。</p>
+    </aside>
+
+    <main>
+      <header class="hero">
+        <p class="eyebrow">AI &amp; No-code Earned Media Research</p>
+        <h1>與 Ragic 規模相近公司的媒體曝光研究</h1>
+        <p>分析 11 家科技與商業媒體最近半年的 AI／no-code 中小公司報導，過濾募資、IPO、財務與公司異動新聞，拆解真正可複製的 PR 切角。</p>
+        <div class="meta">
+          <span>11 家媒體</span>
+          <span>最近 6 個月</span>
+          <span>16 篇可比核心曝光</span>
+          <span>Earned media 為主</span>
+        </div>
+      </header>
+
+      <section id="summary">
+        <h2>研究結論</h2>
+        <p class="lead">真正和 Ragic「人數＋能見度」都接近的案例並不多；最多可比命中集中在 Tier 3。Tier 1 願意報導小公司，但通常需要可驗證數字、真實衝突、記者實測或具名企業案例。</p>
+        <div class="summary-grid">
+          <div class="stat"><strong>16</strong><span>篇可比核心文章，分布於 8 家媒體；包含 16 家不同公司。</span></div>
+          <div class="stat"><strong>6</strong><span>篇在人數與能見度上都與 Ragic 接近；其餘多為更小、同樣低知名度的團隊。</span></div>
+          <div class="stat"><strong>0</strong><span>TechRepublic 嚴格命中；VentureBeat 也沒有知名度同樣低的案例。</span></div>
+        </div>
+        <div class="callout">
+          <p><strong>最重要的判讀：</strong>Ragic 不宜以「我們也推出 AI Agent」當新聞主軸。近期成功曝光的共通點，是把功能轉成一個可驗證事件：節省多少工時、避免什麼風險、造成什麼衝突、哪位客戶願意具名，以及記者能否實測。</p>
+        </div>
+      </section>
+
+      <section id="method">
+        <h2>比較基準與篩選方式</h2>
+        <p class="lead">Ragic 的<a href="https://www.ragic.com/intl/ja/product-company-outline" target="_blank" rel="noreferrer">官方公司資料</a>為 2025 年 8 月 64 人；<a href="https://www.linkedin.com/company/ragic/" target="_blank" rel="noreferrer">LinkedIn</a> 顯示 11–50 人、約 573 followers。因兩者口徑不同，本研究使用範圍而非單一人數比較。</p>
+        <div class="legend" aria-label="案例分級">
+          <span class="badge badge-a">A｜人數與知名度都接近</span>
+          <span class="badge badge-b">B｜知名度接近、團隊較小</span>
+          <span class="badge badge-u">U｜規模近、知名度上緣</span>
+          <span class="badge badge-zero">0｜無嚴格命中</span>
+        </div>
+        <div class="footnotes" style="margin-top:20px">
+          <strong>納入：</strong>產品發布、記者實測、客戶案例、研究／benchmark、資安事件、創辦人經驗、趨勢分析與專家引言。<br>
+          <strong>排除：</strong>以募資、估值、ARR、IPO、財報、併購、裁員或高階主管異動為主要新聞點的文章。產品新聞只在背景段落交代歷史募資時，不一律排除，但會明確註記。
+        </div>
+      </section>
+
+      <section id="tier1">
+        <p class="eyebrow">Tier 1</p>
+        <h2>TechCrunch、The Verge、WSJ</h2>
+        <p class="lead">Tier 1 的小公司曝光不是單純新品清單，而是「小團隊挑戰大對手」、工作方式被量化改變，或產品主張接受記者的獨立檢驗。</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>媒體</th><th>最近半年案例</th><th>PR 模式判讀</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="outlet">TechCrunch<br><span class="badge badge-zero">0 核心</span></td>
+                <td>
+                  <p class="case"><span class="badge badge-u">邊界</span> <a href="https://techcrunch.com/2026/07/08/hot-french-startup-zml-releases-free-product-to-speed-inference-across-lots-of-ai-chips/" target="_blank" rel="noreferrer">ZML：跨晶片 AI inference 產品發布</a><br><span class="small">文章稱約 20 人；LinkedIn 約 <a href="https://www.linkedin.com/company/zmlai" target="_blank" rel="noreferrer">3,442 followers</a>。產品是主軸，但文章有 Fundraising tag 與歷史募資背景，因此不列核心。</span></p>
+                  <p class="case"><span class="badge badge-u">U</span> <a href="https://techcrunch.com/2026/04/14/how-vibe-coding-app-anything-is-rebuilding-after-getting-booted-from-the-app-store-twice/" target="_blank" rel="noreferrer">Anything：兩度被 App Store 下架後的產品應變</a><br><span class="small">2–10 人，但約 14,225 followers；公司規模小，知名度明顯高於 Ragic。</span></p>
+                  <p class="case"><span class="badge badge-u">U</span> <a href="https://techcrunch.com/2026/04/07/i-cant-help-rooting-for-tiny-open-source-ai-model-maker-arcee/" target="_blank" rel="noreferrer">Arcee：26 人挑戰大型 AI labs</a>；<a href="https://techcrunch.com/2026/04/06/indian-startup-rocket-wants-its-ai-to-do-mckinsey-style-consulting-at-a-fraction-of-the-cost/" target="_blank" rel="noreferrer">Rocket：記者實測 AI 顧問工具</a>。</p>
+                </td>
+                <td>偏好 exclusive、David-vs-Goliath、平台衝突或可實測新品。單純「我們推出 AI 功能」很弱，且 TechCrunch 常在產品稿末段交代歷史募資。</td>
+              </tr>
+              <tr>
+                <td class="outlet">The Verge</td>
+                <td>
+                  <p class="case"><span class="badge badge-a">A</span> <a href="https://www.theverge.com/ai-artificial-intelligence/939765/ai-training-data-startup-shift-free-cleaning" target="_blank" rel="noreferrer">Shift：免費居家清潔換 AI 訓練資料</a><br><span class="small">約 46 位可見員工、<a href="https://www.linkedin.com/company/joinshift" target="_blank" rel="noreferrer">647 followers</a>。</span></p>
+                  <p class="case"><span class="badge badge-a">A</span> <a href="https://www.theverge.com/tech/961711/solos-airgo-a6-smart-glasses-ai-assistant-privacy" target="_blank" rel="noreferrer">Solos：19 克、無鏡頭 AI 眼鏡</a><br><span class="small">約 22 位可見員工、<a href="https://www.linkedin.com/company/solos-technology-limited" target="_blank" rel="noreferrer">1,019 followers</a>；品牌有母系公司背景。</span></p>
+                  <p class="case"><span class="badge badge-b">B</span> <a href="https://www.theverge.com/ai-artificial-intelligence/943531/ai-script-quilty-simon-horsman-daniel-wood" target="_blank" rel="noreferrer">Quilty：AI 能否預測電影劇本成功</a><br><span class="small"><a href="https://www.linkedin.com/company/quiltyapp" target="_blank" rel="noreferrer">2–10 人、124 followers</a>。</span></p>
+                </td>
+                <td>偏好記者實測、隱私或勞動衝突，以及能與大品牌直接比較的規格。曝光不一定正面；Quilty 的預測就被記者用實際電影案例質疑。</td>
+              </tr>
+              <tr>
+                <td class="outlet">WSJ</td>
+                <td>
+                  <p class="case"><span class="badge badge-a">A</span> <a href="https://www.wsj.com/tech/ai/meet-the-startup-that-used-ai-and-openclaw-to-automate-its-own-developers-9e733351" target="_blank" rel="noreferrer">JustPaid：9 人公司用 7 個 AI agents，一個月完成 10 項大型功能</a><br><span class="small"><a href="https://nl.linkedin.com/company/justpaid" target="_blank" rel="noreferrer">約 2,953 followers</a>；另有<a href="https://www.wsj.com/public/resources/documents/el0qSmYNC9ymb4n8Tp5m-WSJNewsPaper-4-1-2026.pdf" target="_blank" rel="noreferrer">官方紙本 PDF</a>。</span></p>
+                  <p class="case"><span class="badge badge-u">趨勢文</span> <a href="https://www.wsj.com/tech/ai/voice-technology-ai-hardware-4d39f6d2" target="_blank" rel="noreferrer">Sandbar／Wispr／Plaud：語音成為新介面</a>；<a href="https://www.wsj.com/tech/gps-jammers-dead-zones-e76f3261" target="_blank" rel="noreferrer">Vermeer：GPS dead zones</a>；<a href="https://www.wsj.com/tech/ai/ai-isnt-lightening-workloads-its-making-them-more-intense-e417dd2c" target="_blank" rel="noreferrer">Steelhead：AI 讓工作更密集</a>。</p>
+                </td>
+                <td>最重視具名公司、量化營運改變、研究資料與反方意見。JustPaid 是最值得 Ragic 仿效的 Tier 1 範例。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          <p><strong>與 Ragic 最相關的趨勢窗口：</strong>The Verge 的 <a href="https://www.theverge.com/tech/928905/vibe-code-personal-software-revolution" target="_blank" rel="noreferrer">personal software／vibe coding 專題</a>指出安全、支援、同步與長期維護仍是弱點。Ragic 比起自稱「另一個 vibe-coding 工具」，更適合站在企業治理、權限與可維護性的角色。</p>
+        </div>
+      </section>
+
+      <section id="tier2">
+        <p class="eyebrow">Tier 2</p>
+        <h2>VentureBeat、InfoWorld、Computerworld、TechRepublic、SiliconANGLE</h2>
+        <p class="lead">Tier 2 對產品 launch package 的接受度較高，但仍需要 demo、客戶、專業觀點或具體 proof point，而不是抽象地宣稱「AI-native」。</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>媒體</th><th>最近半年案例</th><th>PR 模式判讀</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="outlet">VentureBeat<br><span class="badge badge-zero">0 核心</span></td>
+                <td>
+                  <p class="case"><span class="badge badge-u">U</span> <a href="https://venturebeat.com/technology/softr-launches-ai-native-platform-to-help-nontechnical-teams-build-business/" target="_blank" rel="noreferrer">Softr：AI-native no-code business app 平台</a><br><span class="small"><a href="https://www.linkedin.com/company/softr" target="_blank" rel="noreferrer">11–50 人、約 29,000 followers</a>。產品類別最接近 Ragic，但知名度高很多。</span></p>
+                  <p class="case"><span class="badge badge-u">U</span> <a href="https://venturebeat.com/technology/kilo-launches-ai-powered-slack-bot-that-ships-code-from-a-chat-message" target="_blank" rel="noreferrer">Kilo：從 Slack 訊息直接完成開發任務</a><br><span class="small"><a href="https://www.linkedin.com/company/kilo" target="_blank" rel="noreferrer">11–50 人、約 7,600 followers</a>。</span></p>
+                </td>
+                <td>有效組合是產品發布、CEO 獨家訪談、完整 demo、使用數據和具名客戶。Softr 是產品定位研究的最佳上緣樣本。</td>
+              </tr>
+              <tr>
+                <td class="outlet">InfoWorld</td>
+                <td>
+                  <p class="case"><span class="badge badge-b">B</span> <a href="https://www.infoworld.com/article/4178415/what-will-ai-first-ux-look-like.html" target="_blank" rel="noreferrer">ReilAI CEO 進入 AI-first UX 趨勢分析</a><br><span class="small"><a href="https://www.linkedin.com/company/reilai" target="_blank" rel="noreferrer">2–10 人、約 54 followers</a>。</span></p>
+                  <p class="case"><span class="badge badge-u">U</span> <a href="https://www.infoworld.com/article/4190721/five-tools-to-bolster-your-ai-coding-stack.html" target="_blank" rel="noreferrer">MetalBear／mirrord 進入 AI coding 工具 roundup</a><br><span class="small"><a href="https://www.linkedin.com/company/metalbearco" target="_blank" rel="noreferrer">11–50 人、約 6,700 followers</a>。</span></p>
+                </td>
+                <td>小公司未必需要獨立專題。有清楚、非推銷式的技術觀點，就能以專家引言或工具 roundup 進入報導。</td>
+              </tr>
+              <tr>
+                <td class="outlet">Computerworld</td>
+                <td>
+                  <p class="case"><span class="badge badge-a">A</span> <span class="badge badge-b">B</span> <a href="https://www.computerworld.com/article/4193378/talk-talk-talk-the-rise-of-ai-dictation-tools-at-work.html" target="_blank" rel="noreferrer">Superwhisper、Willow 進入企業 AI 語音工具實測</a><br><span class="small">Superwhisper：<a href="https://www.linkedin.com/company/superwhisper" target="_blank" rel="noreferrer">11–50 人、約 2,200 followers</a>；Willow：<a href="https://www.linkedin.com/company/willowvoice" target="_blank" rel="noreferrer">2–10 人</a>。</span></p>
+                  <p class="case"><span class="badge badge-u">U</span> <a href="https://www.computerworld.com/article/4183069/nextcloud-adds-euro-office-to-hub-workplace-suite-expands-ai-assistant.html" target="_blank" rel="noreferrer">Nextcloud 擴充 AI Assistant</a><br><span class="small">51–200 人級；文末揭露公司支付記者交通與住宿，但未參與編輯。</span></p>
+                </td>
+                <td>偏好品類趨勢、真實企業買方試用和導入過程。Superwhisper、Willow 雖被測試，最後客戶選了另一家；「進入 shortlist」本身仍能構成曝光。</td>
+              </tr>
+              <tr>
+                <td class="outlet">TechRepublic<br><span class="badge badge-zero">0 核心</span></td>
+                <td><a href="https://www.techrepublic.com/article/news-chinese-ai-models-cost-risk/" target="_blank" rel="noreferrer">最接近的 Lindy 片段</a>只有一段二手引用，且文章主軸是中國模型的成本與企業風險，因此排除。</td>
+                <td>依這半年樣本，不建議列為 Ragic 首輪優先媒體。</td>
+              </tr>
+              <tr>
+                <td class="outlet">SiliconANGLE</td>
+                <td>
+                  <p class="case"><span class="badge badge-a">A</span> <a href="https://siliconangle.com/2026/05/12/ai-security-startup-grego-ai-debuts-claims-record-250000-bounty-ai-found-exploit/" target="_blank" rel="noreferrer">Grego AI：用 AI 找出漏洞並獲得 25 萬美元 bounty</a><br><span class="small"><a href="https://www.linkedin.com/company/gregoai" target="_blank" rel="noreferrer">11–50 人、約 56 followers</a>。金額是漏洞獎金，不是募資或營收。</span></p>
+                  <p class="case"><span class="badge badge-u">U</span> <a href="https://siliconangle.com/2026/01/29/virtue-ai-debuts-agentsuite-platform-help-enterprises-secure-ai-agents/" target="_blank" rel="noreferrer">Virtue AI AgentSuite</a>；<a href="https://siliconangle.com/2026/03/31/lazarus-ai-debuts-applied-intelligence-engine-help-enterprises-move-pilots-production/" target="_blank" rel="noreferrer">Lazarus AI Applied Intelligence Engine</a>。</p>
+                </td>
+                <td>對 announcement-driven 新聞接受度較高，但標題仍需要具體 proof point、具名客戶、漏洞、效益或明確企業痛點。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="tier3">
+        <p class="eyebrow">Tier 3</p>
+        <h2>Diginomica、The Register、Inc. Magazine</h2>
+        <p class="lead">Tier 3 是相近規模公司最穩定的曝光來源，但三家媒體的選題性格很不同：產業命題、技術事故與 SMB 商業衝擊各自有清楚偏好。</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>媒體</th><th>最近半年核心案例</th><th>PR 模式判讀</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="outlet">Diginomica</td>
+                <td>
+                  <p class="case"><span class="badge badge-b">B</span> <a href="https://diginomica.com/agentic-commerce-enterprise-grade-or-not-yes-says-ayal-karmi-it-needs-operational-rails" target="_blank" rel="noreferrer">nekuda：agentic commerce 需要哪些企業級 operational rails</a><br><span class="small"><a href="https://www.linkedin.com/company/nekuda" target="_blank" rel="noreferrer">2–10 人、約 921 followers</a>。</span></p>
+                  <p class="case"><span class="badge badge-b">B</span> <a href="https://diginomica.com/openais-ai-talent-war-anthropic-leaving-aside-point-scoring-heres-how-personal-agent-meme-might" target="_blank" rel="noreferrer">Qwibit／NanoClaw：個人 AI agent 如何影響企業</a><br><span class="small">約 2–10 人級的小型團隊與開源專案。</span></p>
+                  <p class="case"><span class="badge badge-a">A</span> <a href="https://diginomica.com/being-best-good-being-useful-better-how-living-models-botanic-ai-sets-out-tackle-climate-change" target="_blank" rel="noreferrer">Living Models：用 BOTANIC AI 處理農業氣候問題</a><br><span class="small"><a href="https://www.linkedin.com/company/livingmodels" target="_blank" rel="noreferrer">11–50 人、約 1,517 followers</a>。文首提到歷史 seed round，但主體是產品與應用。</span></p>
+                </td>
+                <td>偏好「產業命題＋創辦人觀點＋垂直應用」，不是一般新品新聞。公司要能成為一個更大趨勢的解釋者。</td>
+              </tr>
+              <tr>
+                <td class="outlet">The Register</td>
+                <td>
+                  <p class="case"><span class="badge badge-b">B</span> <a href="https://www.theregister.com/security/2026/02/01/deepfake-job-seeker-applied-to-work-for-an-ai-security-firm/4244472" target="_blank" rel="noreferrer">Evoke Security：AI 資安公司遇到 deepfake 求職者</a></p>
+                  <p class="case"><span class="badge badge-b">B</span> <a href="https://www.theregister.com/2026/03/09/mckinsey_ai_chatbot_hacked/" target="_blank" rel="noreferrer">CodeWall：AI agent 兩小時攻破 McKinsey chatbot</a></p>
+                  <p class="case"><span class="badge badge-b">B</span> <a href="https://www.theregister.com/software/2026/03/18/water-company-spins-out-homegrown-ai-after-llms-failed-it/5219812" target="_blank" rel="noreferrer">Rozum：企業浪費 20 萬美元後自建 AI 品質過濾系統</a></p>
+                  <p class="small">三者均為 2–10 人級公司。20 萬美元是導入失敗造成的營運浪費，並非公司財務新聞。</p>
+                </td>
+                <td>最喜歡事故、失敗、資安研究、可重現細節與帶懷疑態度的技術證據。若沒有真實測試或事件，不適合只投產品公告。</td>
+              </tr>
+              <tr>
+                <td class="outlet">Inc. Magazine</td>
+                <td>
+                  <p class="case"><span class="badge badge-b">B</span> <a href="https://www.inc.com/leila-sheridan/an-ai-agent-broke-into-mckinseys-internal-chatbot-and-accessed-millions-of-records-in-just-2-hours/91314432" target="_blank" rel="noreferrer">CodeWall：同一研究隔天進入 Inc.</a></p>
+                  <p class="case"><span class="badge badge-b">B</span> <a href="https://www.inc.com/chloe-aiello/this-founder-watched-an-ai-agent-destroy-3-months-of-company-data-it-took-9-seconds/91337276" target="_blank" rel="noreferrer">PocketOS：AI agent 在 9 秒內刪掉三個月資料</a><br><span class="small"><a href="https://www.linkedin.com/company/pocketos" target="_blank" rel="noreferrer">2–10 人、約 120 followers</a>。</span></p>
+                  <p class="case"><span class="badge badge-b">B</span> <a href="https://www.inc.com/georgia-fearn/your-business-should-hire-an-ai-receptionist-heres-how-quickly-they-can-pay-for-themselves/91362398" target="_blank" rel="noreferrer">Maitly.ai：AI receptionist 的 SMB ROI</a><br><span class="small"><a href="https://www.linkedin.com/company/maitly-ai" target="_blank" rel="noreferrer">2–10 人、約 133 followers</a>。</span></p>
+                </td>
+                <td>偏好創辦人親歷事件、清楚的時間／金錢／資料損失，以及中小企業能直接理解的 ROI。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          <p><strong>跨媒體擴散案例：</strong>CodeWall 的技術研究 3 月 9 日先進 <a href="https://www.theregister.com/2026/03/09/mckinsey_ai_chatbot_hacked/" target="_blank" rel="noreferrer">The Register</a>，3 月 10 日再被 <a href="https://www.inc.com/leila-sheridan/an-ai-agent-broke-into-mckinseys-internal-chatbot-and-accessed-millions-of-records-in-just-2-hours/91314432" target="_blank" rel="noreferrer">Inc.</a> 從商業衝擊角度報導。這不證明兩篇一定來自同一套 PR 操作，但顯示一個夠強的事實，可以同時包裝成技術與商業故事。</p>
+        </div>
+      </section>
+
+      <section id="insights">
+        <h2>對 Ragic 最重要的 PR 規律</h2>
+        <div class="insights">
+          <article class="insight"><span class="num">1</span><h3>功能要變成可驗證事件</h3><p>原本要多少工時、現在多少？錯誤率與人工修改率是多少？哪個具名客戶願意受訪？記者能否取得測試環境？</p></article>
+          <article class="insight"><span class="num">2</span><h3>Tier 1 需要允許質疑</h3><p>Quilty、Shift、Anything 的曝光都帶有負面或衝突元素。完全控制訊息的產品稿，反而很難獲得高階媒體信任。</p></article>
+          <article class="insight"><span class="num">3</span><h3>治理比生成速度更有差異</h3><p>Ragic 應強調安全、資料權限、結構化資料、稽核與長期維護，而不是跟新一代 vibe-coding 工具比誰更快生成 app。</p></article>
+          <article class="insight"><span class="num">4</span><h3>同一證據可以做兩種故事</h3><p>技術媒體重視測試方法與可重現性；商業媒體重視時間、成本、風險和人。先建立核心事實，再依媒體重寫切角。</p></article>
+          <article class="insight"><span class="num">5</span><h3>Tier 2 適合產品 launch package</h3><p>VentureBeat、SiliconANGLE 可接受新品主導，但需要 CEO 訪談、完整 demo、具名客戶、使用數據及競爭定位。</p></article>
+          <article class="insight"><span class="num">6</span><h3>小公司也能靠觀點入場</h3><p>ReilAI 與 nekuda 顯示：不必每次都爭取公司專題。清楚回答一個正在發生的企業 AI 問題，也能獲得高品質引用。</p></article>
+        </div>
+      </section>
+
+      <section id="priority">
+        <h2>依素材選擇媒體</h2>
+        <div class="priority">
+          <article><h3>有新品與完整 demo</h3><p>優先：VentureBeat、SiliconANGLE。準備 CEO 訪談、使用數據、具名客戶與競品差異。</p></article>
+          <article><h3>有具名客戶與 ROI</h3><p>優先：Inc.、Computerworld；數據夠強再挑戰 WSJ。</p></article>
+          <article><h3>有資安或 MCP 測試</h3><p>優先：The Register、InfoWorld；需要 threat model、可重現方法與第三方驗證。</p></article>
+          <article><h3>有產業論點與研究資料</h3><p>優先：Diginomica、InfoWorld；公司要扮演趨勢解釋者，而不是只談自己。</p></article>
+          <article><h3>有獨家、重大衝突或實測</h3><p>挑戰：TechCrunch、The Verge、WSJ。成功門檻最高，也最需要接受獨立質疑。</p></article>
+          <article><h3>近期低優先</h3><p>TechRepublic：最近半年沒有找到符合本研究尺度與題型的核心案例。</p></article>
+        </div>
+      </section>
+
+      <section id="pitches">
+        <h2>可直接發展的 5 個 Ragic 題目</h2>
+        <p class="lead">以下不是一般功能新聞，而是依照本次媒體樣本反推的可刊登題目。每題都列出刊登前必須補齊的證據。</p>
+        <div class="table-wrap">
+          <table class="pitch-table">
+            <thead><tr><th>題目</th><th>適合媒體</th><th>刊登前必須補齊</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><span class="rank">優先 1</span>一家現場服務公司如何把 95% 營運放進 no-code database，每月省下 100+ 小時<br><span class="small">現有 <a href="https://www.ragic.com/intl/en/blog/644/apex-unlimited-services-saves-100-hours-a-month" target="_blank" rel="noreferrer">Apex 客戶案例</a>還包括稽核縮短至 5 分鐘內。</span></td>
+                <td>Inc.<br>Computerworld<br>WSJ</td>
+                <td>客戶具名授權、原始 time logs、節省工時計算方式、導入成本與建置時間。這是目前最容易落地的一題。</td>
+              </tr>
+              <tr>
+                <td><span class="rank">優先 2</span>這個 MCP server 看得到企業資料，卻刻意什麼都不能改<br><span class="small">Ragic MCP 沿用既有權限並設計為 read-only。<a href="https://www.ragic.com/intl/en/doc/187/accessing-ragic-data-via-mcp" target="_blank" rel="noreferrer">官方技術文件</a></span></td>
+                <td>The Register<br>SiliconANGLE<br>InfoWorld</td>
+                <td>Threat model、提示注入與越權測試、寫入阻擋紀錄，最好加入第三方 pentest。</td>
+              </tr>
+              <tr>
+                <td><span class="rank">優先 3</span>小型 IT 團隊能否在不把資料送上雲的情況下使用 AI？<br><span class="small">以 <a href="https://www.ragic.com/intl/en/doc-kb/379/how-to-use-local-ai-model-on-an-on-premises-server" target="_blank" rel="noreferrer">local AI model</a> 和 <a href="https://www.ragic.com/intl/en/doc/123/on-premises-installation" target="_blank" rel="noreferrer">on-premises Ragic</a> 做 30 天實測。</span></td>
+                <td>Computerworld<br>Diginomica<br>The Register</td>
+                <td>具名醫療或製造客戶、硬體需求、建置工時、延遲、準確率、TCO 及網路封包證明。</td>
+              </tr>
+              <tr>
+                <td><span class="rank">優先 4</span>使用者不使用聊天機器人後，Ragic 如何把 AI 改成資料庫裡的隱形同事<br><span class="small">從 <a href="https://www.ragic.com/intl/en/blog/451/product-roadmap-developments" target="_blank" rel="noreferrer">產品 roadmap</a> 的反思走向 @AI、agents 與 scheduled tasks；參見 <a href="https://www.ragic.com/intl/en/doc/180/assign-ai-agents" target="_blank" rel="noreferrer">AI Agent 文件</a>。</span></td>
+                <td>VentureBeat<br>SiliconANGLE</td>
+                <td>改版前後啟用率、任務量、成功率、人工覆核率和至少兩家客戶。沒有改善數據，不宜使用這個切角。</td>
+              </tr>
+              <tr>
+                <td><span class="rank">優先 5</span>AI 真正的生產力稅不是模型速度，而是 copy-paste<br><span class="small">比較一般 chatbot 與直接寫回結構化資料的 <a href="https://www.ragic.com/intl/en/product-ai-agent" target="_blank" rel="noreferrer">Ragic AI Agent</a>。</span></td>
+                <td>Diginomica<br>InfoWorld<br>WSJ</td>
+                <td>5–10 家客戶、100+ 任務的 A/B benchmark：完成時間、操作次數、錯誤率、修改率及成本。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          <p><strong>建議先啟動兩條線：</strong>用 Apex 做 Inc.／Computerworld 的具名 ROI 故事；同時把 read-only MCP 做成真正可驗證的安全測試，投 The Register／SiliconANGLE。兩題都比一般「AI Agent 上線」新聞更符合最近半年的編採模式。</p>
+        </div>
+      </section>
+
+      <section id="notes">
+        <h2>研究註記</h2>
+        <div class="footnotes">
+          <ul>
+            <li>研究日期範圍為 2026/01/13 至 2026/07/13，文章日期以媒體頁面標示為準。</li>
+            <li>公司人數與 followers 為研究時可取得的 LinkedIn／公司頁面資料，只作相對能見度判斷，並非精確員工稽核。</li>
+            <li>主表以 earned editorial 為主。InfoWorld 案例由 contributing writer 撰寫，但不是廠商投稿；另已排除 The Register 的 NeuBird Sponsored Feature 與 Inc. 的廠商創辦人投稿。</li>
+            <li>營運成本、漏洞 bounty、資料損失和 ROI 數字可作產品成效或事件證據；它們不是本研究所排除的公司財務／募資新聞。</li>
+            <li>媒體報導可能受付費牆、搜尋索引及頁面更新影響。本報告列的是研究期間內可核實、最符合條件的案例，不等同媒體內部完整資料庫。</li>
+          </ul>
+        </div>
+      </section>
+
+      <footer>
+        Ragic AI／No-code 媒體曝光研究｜製作日期 2026/07/13｜所有外部連結版權屬原媒體與網站所有。
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
