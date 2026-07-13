@@ -7,6 +7,7 @@
 """
 
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -109,15 +110,21 @@ def main() -> None:
         print("no candidates to classify")
         return
 
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        sys.exit("ANTHROPIC_API_KEY is missing or empty — aborting so bad data "
+                 "is never committed. Set the repo secret and re-run.")
+
     cfg = yaml.safe_load(CONFIG.read_text())
     system = build_system(cfg)
     client = anthropic.Anthropic()
 
     classified = []
+    ok_batches = 0
     for start in range(0, len(candidates), BATCH_SIZE):
         batch = candidates[start:start + BATCH_SIZE]
         try:
             results = classify_batch(client, system, batch)
+            ok_batches += 1
         except Exception as e:
             print(f"[warn] batch {start} failed: {e}", file=sys.stderr)
             results = []
@@ -138,6 +145,10 @@ def main() -> None:
                                    "company": r["company"],
                                    "size_grade": r["size_grade"],
                                    "note_zh": r["note_zh"]})
+
+    if ok_batches == 0:
+        sys.exit("all classification batches failed — aborting so bad data "
+                 "is never committed.")
 
     OUT.write_text(json.dumps(classified, ensure_ascii=False, indent=2))
     passed = sum(1 for c in classified if c["relevant"])
