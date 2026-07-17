@@ -116,7 +116,7 @@ def main() -> None:
 
     cfg = yaml.safe_load(CONFIG.read_text())
     system = build_system(cfg)
-    client = anthropic.Anthropic()
+    client = anthropic.Anthropic(max_retries=6)  # 529 過載時多重試，避免整批落入人工判讀
 
     classified = []
     ok_batches = 0
