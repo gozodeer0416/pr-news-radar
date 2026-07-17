@@ -61,7 +61,7 @@ principles:
   # 「與 Ragic 可比的公司」定義——這段文字會直接進分類 prompt
   company_profile: >
     與 Ragic 規模相近的公司定義：約 10–70 人的 B2B 軟體公司，
-    低市場知名度（LinkedIn followers 大約低於 5,000、非知名品牌），
+    低市場知名度（在 tier1, tier2 媒體曝光總數低於 2），
     領域為 AI、no-code/low-code、SaaS、資料庫、企業生產力工具。
     規模分級：A = 人數與知名度都與 Ragic 接近；
     B = 知名度接近但團隊更小（2–10 人）；
