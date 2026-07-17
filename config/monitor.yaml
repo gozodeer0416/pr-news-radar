@@ -1,8 +1,8 @@
 # ============================================================
 # PR 新聞觀測原則（單一調整入口）
 #
-# 改這個檔案 → push 到 main → 下次每週執行自動生效。
-# 想立即重跑：GitHub repo → Actions → Weekly PR News Monitor → Run workflow
+# 在 GitHub 網頁上編輯這個檔案 → 按 Commit changes → 系統會自動重跑，
+# 約 10 分鐘後 dashboard 就會反映新原則，不需要任何其他操作。
 #
 # 各區塊說明：
 #   media       目標媒體清單（增刪媒體、調整 tier 都在這裡）

@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: "0 1 * * 1"   # 每週一 09:00 台北時間 (01:00 UTC)
   workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - "config/monitor.yaml"   # 在 GitHub 網頁改完 config 按 Commit 就自動重跑
 
 permissions:
   contents: write

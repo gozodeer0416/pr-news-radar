@@ -17,7 +17,8 @@
 
 ## 調整觀測原則
 
-所有原則集中在 **`config/monitor.yaml`**，直接編輯後 push 即可：
+所有原則集中在 **`config/monitor.yaml`**。在 GitHub 網頁上編輯、按 Commit changes
+即完成——workflow 會自動重跑（不需要 push、不需要手動觸發）：
 
 | 想調整什麼 | 改哪裡 |
 |---|---|
@@ -28,7 +29,7 @@
 | 切角分類法 | `principles.angles` |
 | 回看天數 | `lookback_days` |
 
-改完想立即重跑：repo → **Actions** → **Weekly PR News Monitor** → **Run workflow**。
+改 config 會自動重跑；其他情況想手動重跑：repo → **Actions** → **Weekly PR News Monitor** → **Run workflow**。
 
 ## 本機執行
 
