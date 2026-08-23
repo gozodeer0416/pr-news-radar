@@ -77,7 +77,7 @@
     }
     .updated { margin-left: auto; color: var(--muted); font-size: 12px; }
 
-    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 18px; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-top: 18px; }
     .stat {
       padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius);
       background: var(--surface); box-shadow: var(--shadow);
@@ -282,12 +282,15 @@
       const passed = arts.filter(a => a.relevant);
       const excluded = arts.filter(a => !a.relevant);
       const hits = passed.filter(a => a.size_grade === "A" || a.size_grade === "B");
+      // 摘要多半看不出公司人數，分級會停在 unknown——這些不是「不符合」，是「還沒判斷出來」
+      const maybe = passed.filter(a => a.size_grade === "unknown");
 
       $("stats").innerHTML = [
         [arts.length, "候選文章（去重後）"],
         [passed.length, "通過觀測原則"],
         [excluded.length, "被排除（募資/財務/大廠等）"],
-        [hits.length, "可比核心命中（A＋B）"],
+        [hits.length, "確定同規模（A＋B）"],
+        [maybe.length, "疑似同規模（unknown）"],
       ].map(([n, t]) => `<div class="stat"><strong>${n}</strong><span>${t}</span></div>`).join("");
 
       // 切角分布

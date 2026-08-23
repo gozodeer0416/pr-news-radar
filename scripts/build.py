@@ -72,6 +72,8 @@ def main() -> None:
             "total": len(arts),
             "passed": sum(1 for a in arts if a["relevant"]),
             "hits": sum(1 for a in arts if a["relevant"] and a["size_grade"] in ("A", "B")),
+            # 摘要判不出人數時分級會停在 unknown——另外記一欄，避免和「不符合」混為一談
+            "maybe": sum(1 for a in arts if a["relevant"] and a["size_grade"] == "unknown"),
         })
 
     INDEX.write_text(json.dumps({
