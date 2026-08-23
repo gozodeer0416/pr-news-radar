@@ -8,7 +8,7 @@
 
 ## 運作方式
 
-每週一 09:00（台北時間）GitHub Actions 自動執行：
+每週五 08:00（台北時間）GitHub Actions 自動執行：
 
 1. `scripts/fetch.py` — 兩條來源並行抓取後合併去重：
    - 對 11 家目標媒體 × 5 組關鍵字查 Google News RSS

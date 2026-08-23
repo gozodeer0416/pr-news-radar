@@ -2,7 +2,7 @@ name: Weekly PR News Monitor
 
 on:
   schedule:
-    - cron: "0 1 * * 1"   # 每週一 09:00 台北時間 (01:00 UTC)
+    - cron: "0 0 * * 5"   # 每週五 08:00 台北時間 (00:00 UTC；台灣無日光節約，全年固定)
   workflow_dispatch: {}
   push:
     branches: [main]
