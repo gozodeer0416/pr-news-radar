@@ -53,7 +53,9 @@ def main() -> None:
     today = now.date().isoformat()
     for a in classified:
         seen[a["guid"]] = today
-        domain = next((m["domain"] for m in cfg["media"] if m["name"] == a["media"]), "")
+        # fetch.py 會直接帶 domain；舊資料沒有這欄，退回用媒體名反查
+        domain = a.get("domain") or next(
+            (m["domain"] for m in cfg["media"] if m["name"] == a["media"]), "")
         seen[f"{domain}::{a['title'].lower()}"] = today
     cutoff = (now.date() - timedelta(days=SEEN_RETENTION_DAYS)).isoformat()
     seen = {k: v for k, v in seen.items() if v >= cutoff}

@@ -10,7 +10,9 @@
 
 每週一 09:00（台北時間）GitHub Actions 自動執行：
 
-1. `scripts/fetch.py` — 對 11 家目標媒體 × 5 組關鍵字查 Google News RSS，去重
+1. `scripts/fetch.py` — 兩條來源並行抓取後合併去重：
+   - 對 11 家目標媒體 × 5 組關鍵字查 Google News RSS
+   - 讀 `config/monitor.yaml` 的 `feeds:`（直接訂閱的 RSS，不過關鍵字，補漏抓的盲區）
 2. `scripts/classify.py` — 用 Claude（Haiku 4.5）依觀測原則分類：
    排除募資/財務/大廠新聞、標記切角類型、判斷公司規模是否與 Ragic 可比（A/B/U）
 3. `scripts/build.py` — 產出 `docs/data/weeks/{週次}.json` 並 commit，GitHub Pages 即時更新
@@ -24,6 +26,7 @@
 |---|---|
 | 增刪目標媒體、改 Tier | `media:` 區塊 |
 | 搜尋關鍵字 | `topics:` 區塊 |
+| 增刪直接訂閱的 RSS 來源 | `feeds:` 區塊 |
 | 「同規模公司」的定義 | `principles.company_profile` |
 | 排除規則（如是否排除募資新聞） | `principles.exclude` |
 | 切角分類法 | `principles.angles` |

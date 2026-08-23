@@ -46,6 +46,18 @@ media:
     domain: inc.com
     tier: 3
 
+# 直接訂閱的 RSS 網址（不經過 Google News 關鍵字篩選，該來源發的全部文章都會進來）
+#
+# 用途：補「關鍵字沒設到就漏掉」的盲區。文章的媒體與 Tier 會依網址自動對應到
+# 上面的 media 清單；不在清單上的來源會用網域當媒體名，並套用 default_tier。
+#
+# ⚠️ 網址結尾的 ?n=1000 不能拿掉——Inoreader 預設只回傳最新 20 篇（不到一天），
+#    加上這個參數才會回溯足夠天數蓋滿 lookback_days。回溯不足時執行紀錄會示警。
+feeds:
+  - name: Inoreader 2026_EN_PR
+    url: https://www.inoreader.com/stream/user/1005548628/tag/2026_EN_PR?n=1000
+    default_tier: 3
+
 # Google News 查詢關鍵字組（英文媒體用英文查詢）
 topics:
   - '"no-code" OR "low-code"'
