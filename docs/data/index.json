@@ -1,47 +1,61 @@
 {
-  "updated_at": "2026-08-23T13:26:56.008015+00:00",
+  "updated_at": "2026-08-28T07:35:44.117141+00:00",
   "weeks": [
+    {
+      "id": "2026-W35",
+      "generated_at": "2026-08-28T07:35:44.117141+00:00",
+      "total": 921,
+      "passed": 32,
+      "hits": 5,
+      "maybe": 26
+    },
     {
       "id": "2026-W34",
       "generated_at": "2026-08-23T13:26:56.008015+00:00",
       "total": 1383,
       "passed": 55,
-      "hits": 1
+      "hits": 1,
+      "maybe": 49
     },
     {
       "id": "2026-W33",
       "generated_at": "2026-08-10T03:15:26.252318+00:00",
       "total": 364,
       "passed": 18,
-      "hits": 0
+      "hits": 0,
+      "maybe": 18
     },
     {
       "id": "2026-W32",
       "generated_at": "2026-08-03T04:33:12.859856+00:00",
       "total": 254,
       "passed": 10,
-      "hits": 0
+      "hits": 0,
+      "maybe": 9
     },
     {
       "id": "2026-W31",
       "generated_at": "2026-07-27T04:40:06.796095+00:00",
       "total": 266,
       "passed": 9,
-      "hits": 0
+      "hits": 0,
+      "maybe": 8
     },
     {
       "id": "2026-W30",
       "generated_at": "2026-07-20T04:37:34.135063+00:00",
       "total": 139,
       "passed": 2,
-      "hits": 0
+      "hits": 0,
+      "maybe": 2
     },
     {
       "id": "2026-W29",
       "generated_at": "2026-07-17T15:15:54.702287+00:00",
       "total": 415,
       "passed": 6,
-      "hits": 1
+      "hits": 1,
+      "maybe": 2
     }
   ],
   "config": {
